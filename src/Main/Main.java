@@ -228,9 +228,9 @@ public class main {
     }
 
     public static void consultarIngresosPorFecha(Hotel hotel, Scanner sc) {
-        String fecha = JOptionPane.showInputDialog(null, "Ingrese la fecha a consultar (AAAA-MM-DD): ");
-        JOptionPane.showMessageDialog(null, "=== INGRESOS DEL " + fecha + " ===" + "\n" +
-                "Reservas encontradas: " + hotel.getCantidadReservasPorFecha(fecha) + "\n" +
+        String fecha = JOptionPane.showInputDialog(null,"Ingrese la fecha a consultar (AAAA-MM-DD): ");
+        JOptionPane.showMessageDialog(null,"=== INGRESOS DEL " + fecha + " ==="+"\n"+
+                "Reservas encontradas: " + hotel.getCantidadReservasPorFecha(fecha)+"\n"+
                 "Ingreso total del día: $" + (int) hotel.getIngresosPorFecha(fecha));
     }
 }
