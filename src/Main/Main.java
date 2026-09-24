@@ -1,4 +1,4 @@
-package main;
+package Main;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -10,7 +10,7 @@ import Model.Reserva;
 
 import javax.swing.*;
 
-public class main {
+public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -207,6 +207,11 @@ public class main {
 
         String reporteEspeciales = "";
 
+        if (especiales.size() > 0) {
+            System.out.println();
+            JOptionPane.showMessageDialog(null,"Total de reservas especiales: " + especiales.size());
+        }
+
         for (int i = 0; i < especiales.size(); i++) {
             Reserva r = especiales.get(i);
 
@@ -217,14 +222,10 @@ public class main {
                     + "\n";
         }
 
-// Mostramos la lista completa de reservas en una sola ventana
         JOptionPane.showMessageDialog(null, reporteEspeciales);
-        }
 
-        if (especiales.size() > 0) {
-            System.out.println();
-            JOptionPane.showMessageDialog(null,"Total de reservas especiales: " + especiales.size());
-        }
+
+
     }
 
     public static void consultarIngresosPorFecha(Hotel hotel, Scanner sc) {
