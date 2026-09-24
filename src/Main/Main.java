@@ -173,7 +173,7 @@ public class Main {
                 "            ");
         String textoDias="";
         for (int j = 0; j < dias.length; j++) {
-            textoDias=(dias[j] + "\t");
+            textoDias +=(dias[j] + "\t");
         }
         JOptionPane.showMessageDialog(null,textoDias);
 
