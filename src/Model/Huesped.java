@@ -2,6 +2,7 @@ package Model;
 
 
 public class Huesped {
+
     private String documentoIdentidad;
     private String nombreCompleto;
     private byte edad;
