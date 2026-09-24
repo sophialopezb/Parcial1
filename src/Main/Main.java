@@ -1,7 +1,7 @@
 package Main;
 
+import java.lang.classfile.instruction.SwitchCase;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import Model.Habitacion;
 import Model.Hotel;
@@ -13,7 +13,7 @@ import javax.swing.*;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+
         Hotel hotel = cargarDatos();
         int opcion = 0;
 
@@ -27,28 +27,34 @@ public class Main {
                 "======================================"+"\n");
 
 
-        while (opcion != 6) {
+        do{
             mostrarMenu();
             opcion=Integer.valueOf(JOptionPane.showInputDialog(null,"Seleccione una opcion: "));
             System.out.println();
 
-            if (opcion == 1) {
-                consultarHuespedPorTelefono(hotel, sc);
-            } else if (opcion == 2) {
-                reporteDisponibilidad(hotel);
-            } else if (opcion == 3) {
-                analizarMatrizOcupacion(hotel);
-            } else if (opcion == 4) {
-                identificarReservasCapicua(hotel);
-            } else if (opcion == 5) {
-                consultarIngresosPorFecha(hotel, sc);
-            } else if (opcion == 6) {
-                JOptionPane.showMessageDialog(null,"Sistema finalizado. Gracias por usar el sistema.");
-            } else {
-                JOptionPane.showMessageDialog(null,"Opción no válida. Intente de nuevo.");
+            switch(opcion){
+                case 1:
+                    consultarHuespedPorTelefono(hotel);
+                    break;
+                case 2:
+                    reporteDisponibilidad(hotel);
+                    break;
+                case 3:
+                    analizarMatrizOcupacion(hotel);
+                    break;
+                case 4:
+                    identificarReservasCapicua(hotel);
+                    break;
+                case 5:
+                    consultarIngresosPorFecha(hotel);
+                    break;
+                case 6:
+                    JOptionPane.showMessageDialog(null,"Sistema finalizado. Gracias por usar el sistema.");
+                    break;
+                default:JOptionPane.showMessageDialog(null,"Opción no válida. Intente de nuevo.");
             }
-        }
 
+        }while(opcion!=6);
     }
 
     public static void mostrarMenu() {
@@ -122,7 +128,7 @@ public class Main {
         return hotel;
     }
 
-    public static void consultarHuespedPorTelefono(Hotel hotel, Scanner sc) {
+    public static void consultarHuespedPorTelefono(Hotel hotel) {
         int telefono =Integer.valueOf(JOptionPane.showInputDialog(null,"Ingrese el número de teléfono del huésped: "));
         Huesped h = hotel.buscarHuespedPorTelefono(telefono);
 
@@ -228,7 +234,7 @@ public class Main {
 
     }
 
-    public static void consultarIngresosPorFecha(Hotel hotel, Scanner sc) {
+    public static void consultarIngresosPorFecha(Hotel hotel) {
         String fecha = JOptionPane.showInputDialog(null,"Ingrese la fecha a consultar (AAAA-MM-DD): ");
         JOptionPane.showMessageDialog(null,"=== INGRESOS DEL " + fecha + " ==="+"\n"+
                 "Reservas encontradas: " + hotel.getCantidadReservasPorFecha(fecha)+"\n"+
