@@ -3,10 +3,10 @@ package main;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import model.Habitacion;
-import model.Hotel;
-import model.Huesped;
-import model.Reserva;
+import Model.Habitacion;
+import Model.Hotel;
+import Model.Huesped;
+import Model.Reserva;
 
 import javax.swing.*;
 
@@ -123,7 +123,7 @@ public class main {
     }
 
     public static void consultarHuespedPorTelefono(Hotel hotel, Scanner sc) {
-        int telefono =Integer.valueOf(JOptionPane.showInputDialog(null,"Ingrese el número de teléfono del huésped: "))
+        int telefono =Integer.valueOf(JOptionPane.showInputDialog(null,"Ingrese el número de teléfono del huésped: "));
         Huesped h = hotel.buscarHuespedPorTelefono(telefono);
 
         if (h == null) {
@@ -228,9 +228,9 @@ public class main {
     }
 
     public static void consultarIngresosPorFecha(Hotel hotel, Scanner sc) {
-        String fecha = JOptionPane.showInputDialog(null,"Ingrese la fecha a consultar (AAAA-MM-DD): ");
-        JOptionPane.showMessageDialog(null,"=== INGRESOS DEL " + fecha + " ==="+"\n"+
-                "Reservas encontradas: " + hotel.getCantidadReservasPorFecha(fecha)+"\n"+
+        String fecha = JOptionPane.showInputDialog(null, "Ingrese la fecha a consultar (AAAA-MM-DD): ");
+        JOptionPane.showMessageDialog(null, "=== INGRESOS DEL " + fecha + " ===" + "\n" +
+                "Reservas encontradas: " + hotel.getCantidadReservasPorFecha(fecha) + "\n" +
                 "Ingreso total del día: $" + (int) hotel.getIngresosPorFecha(fecha));
     }
 }
