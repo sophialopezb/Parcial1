@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class Reserva {
     private String codigoReserva;
     private String fechaReserva;
@@ -8,6 +10,9 @@ public class Reserva {
     private String estadoReserva;
     private String metodoPago;
     private float valorTotal;
+    private Huesped huesped;
+
+    private ArrayList <Habitacion> listaHabitaciones;
 
     public Reserva(String codigoReserva, String fechaReserva, byte numeroNoche, byte cantidadHuesped, String estadoReserva, String metodoPago, float valorTotal) {
         this.codigoReserva = codigoReserva;
@@ -17,6 +22,7 @@ public class Reserva {
         this.estadoReserva = estadoReserva;
         this.metodoPago = metodoPago;
         this.valorTotal = valorTotal;
+        this.listaHabitaciones = new ArrayList<>();
     }
 
     public String getCodigoReserva() {
@@ -74,4 +80,26 @@ public class Reserva {
     public void setValorTotal(float valorTotal) {
         this.valorTotal = valorTotal;
     }
+
+    public boolean agregarHabitacion(Habitacion h) {
+        if(buscarHabitacion(h.getNumeroHabitacion())) {
+            return false;
+        }
+            this.listaHabitaciones.add(h);
+            if (this.estadoReserva.equalsIgnoreCase("confirmado")) {
+                h.setEstadoActual("ocupado");
+            }
+        return true;
+     }
+
+    }
+    public boolean buscarHabitacion (int numeroHabitacion ){
+        for(Habitacion aux : listaHabitaciones){
+            if(aux.getNumeroHabitacion() == numeroHabitacion){
+                return true;
+            }
+        }
+        return false;
+    }
+
 }

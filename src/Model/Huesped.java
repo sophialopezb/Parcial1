@@ -55,4 +55,16 @@ private String ciudadProcedencia;
     public void setCiudadProcedencia(String ciudadProcedencia) {
         this.ciudadProcedencia = ciudadProcedencia;
     }
+
+    @Override
+    public String toString() {
+        return "Huesped{" +
+                "documentoIdentidad='" + documentoIdentidad + '\'' +
+                ", nombreCompleto='" + nombreCompleto + '\'' +
+                ", edad=" + edad +
+                ", numeroTelefono=" + numeroTelefono +
+                ", ciudadProcedencia='" + ciudadProcedencia + '\'' +
+                '}';
+    }
 }
+

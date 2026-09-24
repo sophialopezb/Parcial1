@@ -70,4 +70,20 @@ private String estadoActual; // Disponible, Reservada, ocupada
         this.estadoActual = estadoActual;
     }
 
+    public void disponibilidadHabitacion (String estadoActual) {
+        this.estadoActual = estadoActual;
+    }
+
+    public boolean estaDisponible() {
+        return this.estadoActual.equalsIgnoreCase("Disponible");
+    }
+
+    public boolean estaOcupada() {
+        return this.estadoActual.equalsIgnoreCase("Ocupada") || this.estadoActual.equalsIgnoreCase("Reservada");
+    }
+
+    public boolean estaEnMantenimiento() {
+        return this.estadoActual.equalsIgnoreCase("Mantenimiento");
+    }
+
 }
