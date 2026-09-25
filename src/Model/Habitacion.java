@@ -17,7 +17,8 @@ public class Habitacion {
     public Habitacion() {
     }
 
-    public Habitacion(int numeroHabitacion, String tipoHabitacion, String piso, byte capacidad, float precioNoche, String estadoActual) {
+    public Habitacion(int numeroHabitacion, String tipoHabitacion, String piso, byte capacidad
+            , float precioNoche, String estadoActual) {
         this.numeroHabitacion = numeroHabitacion;
         this.tipoHabitacion = tipoHabitacion;
         this.piso = piso;

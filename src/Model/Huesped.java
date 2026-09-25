@@ -1,4 +1,10 @@
 package Model;
+/**
+ * Esta clase representa los huespedes de un hotel
+ * @version 1.0
+ * @author Sophia Lopez y Juan Esteban
+ * @fecha : 22/09/26
+ */
 
 
 public class Huesped {

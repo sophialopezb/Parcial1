@@ -1,4 +1,10 @@
 package Main;
+/**
+ * representa la interfas del sistema
+ * @version 1.0
+ * @author Sophia Lopez y Juan Esteban
+ * @fecha : 22/09/26
+ */
 
 import java.lang.classfile.instruction.SwitchCase;
 import java.util.ArrayList;
